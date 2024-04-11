@@ -10,9 +10,11 @@ const products = require('./routes/products')
 require('dotenv').config()
 const cors = require('cors')
 
-const uri = process.env.MONGO_URI
 
+mongoose.set("strictQuery" , false);
 mongoose.Promise = global.Promise
+
+const uri = process.env.MONGO_URI
 
 var app = express();
 
